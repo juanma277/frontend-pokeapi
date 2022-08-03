@@ -1,9 +1,30 @@
 <h3>Total pokemons: <strong>{{totalData}}</strong></h3>
 
+<div class="pagination">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="previus" (click)="pagination('previus')" [disabled]="limit == 1 || loader">
+            <<</mat-button-toggle>
+                <mat-button-toggle value="next" (click)="pagination('next')" [disabled]="limit == totalData || loader">>></mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
 <div fxLayout="row wrap" fxLayoutAlign="start">
+    <mat-progress-bar mode="indeterminate" *ngIf="loader"></mat-progress-bar>
     <mat-card *ngFor="let poke of pokemons" fxLayout="row wrap" fxLayoutAlign="center" class="pokecard" (click)="getById(poke.url)">
         <mat-card-content>
             <p><strong>Name:</strong><br /> {{poke.name}}</p>
         </mat-card-content>
     </mat-card>
+</div>
+
+
+
+
+
+<div class="pagination">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="previus" (click)="pagination('previus')" [disabled]="limit == 1 || loader">
+            <<</mat-button-toggle>
+                <mat-button-toggle value="next" (click)="pagination('next')" [disabled]="limit == totalData || loader">>></mat-button-toggle>
+    </mat-button-toggle-group>
 </div>

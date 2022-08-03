@@ -8,6 +8,10 @@ import { HomeComponent } from './home.component';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     FlexLayoutModule,
     MatDialogModule,
-    DetailModule
+    DetailModule,
+    MatButtonToggleModule,
+    MatProgressBarModule
   ]
 })
 export class HomeModule { }
