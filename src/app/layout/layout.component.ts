@@ -12,12 +12,14 @@ export class LayoutComponent implements OnInit {
   public name: string = '';
   public nickname: string = '';
   public last_connection: string = '';
+  public team: string = '';
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.name = this.userService.getUserName();
     this.nickname = this.userService.getNickName();
+    this.team = this.userService.getTeam();
     this.last_connection = this.userService.getLastConnection();
   }
 

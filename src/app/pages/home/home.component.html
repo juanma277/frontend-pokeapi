@@ -3,7 +3,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="start">
     <mat-card *ngFor="let poke of pokemons" fxLayout="row wrap" fxLayoutAlign="center" class="pokecard" (click)="getById(poke.url)">
         <mat-card-content>
-            <p><strong>Nombre:</strong> {{poke.name}}</p>
+            <p><strong>Name:</strong><br /> {{poke.name}}</p>
         </mat-card-content>
     </mat-card>
 </div>

@@ -58,4 +58,12 @@ export class UserService {
     return userData.team;
   }
 
+  isAuthenticated(): boolean {
+    if (localStorage.getItem('token')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

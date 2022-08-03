@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DetailComponent } from './detail.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { FlexModule } from '@angular/flex-layout';
     CommonModule,
     MatCardModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     FlexModule
   ]
 })

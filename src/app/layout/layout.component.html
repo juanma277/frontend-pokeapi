@@ -1,5 +1,9 @@
 <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
-    <span>Bienvenido: {{ nickname | titlecase }} </span>
+    <ng-container [ngSwitch]="team">
+        <span *ngSwitchCase="'Azul'" class="blue">Welcome: {{ nickname | titlecase }} </span>
+        <span *ngSwitchCase="'Rojo'" class="red">Welcome: {{ nickname | titlecase }} </span>
+        <span *ngSwitchCase="'Amarillo'" class="yellow">Welcome: {{ nickname | titlecase }} </span>
+    </ng-container>
     <button mat-button [matMenuTriggerFor]="menu">{{ name | titlecase }}</button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item>Last Connection: {{ last_connection | date: 'mediumTime' }}</button>
