@@ -1,0 +1,19 @@
+.card {
+    overflow: auto;
+}
+
+.header-image {
+    border-radius: 150%;
+    border: 3px solid #666666;
+    padding: 5px;
+}
+
+.image-front {
+    width: 100%;
+    height: auto;
+}
+
+.title,
+.subtitle {
+    margin-left: 2rem;
+}

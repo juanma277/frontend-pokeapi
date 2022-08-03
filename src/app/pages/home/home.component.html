@@ -1,0 +1,9 @@
+<h3>Total pokemons: <strong>{{totalData}}</strong></h3>
+
+<div fxLayout="row wrap" fxLayoutAlign="start">
+    <mat-card *ngFor="let poke of pokemons" fxLayout="row wrap" fxLayoutAlign="center" class="pokecard" (click)="getById(poke.url)">
+        <mat-card-content>
+            <p><strong>Nombre:</strong> {{poke.name}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

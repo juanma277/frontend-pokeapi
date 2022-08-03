@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent{
   public formLogin: FormGroup;
   public textError: string = '';
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
     this.formLogin = this.formBuilder.group({
       nickname: new FormControl("", Validators.required),
       password: new FormControl("", Validators.required)
@@ -27,7 +28,7 @@ export class LoginComponent{
     }
     this.loader = true;
     this.userService.login(this.formLogin.value).subscribe({
-      next: (res) => console.log(res),
+      next: (_res: any) => this.validateLogin(_res.token),
       complete: () => this.loader = false,
       error: (_err: HttpErrorResponse) => this.showError(_err.error.msg)
     })
@@ -38,5 +39,9 @@ export class LoginComponent{
     this.loader = false;    
   }
 
+  validateLogin(token: string){
+    this.userService.saveToken(token);
+    this.router.navigateByUrl('/loged/home');
+  }
 
 }

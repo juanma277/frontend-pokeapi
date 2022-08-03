@@ -1,0 +1,10 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <span>Bienvenido: {{ nickname | titlecase }} </span>
+    <button mat-button [matMenuTriggerFor]="menu">{{ name | titlecase }}</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Last Connection: {{ last_connection | date: 'mediumTime' }}</button>
+        <button mat-menu-item (click)="logout()">Cerrar Sesión</button>
+    </mat-menu>
+
+</mat-toolbar>
+<router-outlet></router-outlet>

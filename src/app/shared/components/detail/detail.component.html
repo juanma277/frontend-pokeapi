@@ -1,0 +1,17 @@
+<mat-card *ngIf="!loader" class="card">
+    <mat-card-header>
+        <div mat-card-avatar>
+            <img class="header-image" mat-card-image [src]="pokemon.sprites.back_default" alt="Photo of a Shiba Inu">
+        </div>
+        <mat-card-title class="title">{{pokemon.name}}</mat-card-title>
+        <mat-card-subtitle class="subtitle">{{pokemon.forms[0].url}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="pokemon.sprites.front_default" alt="">
+    <mat-card-content>
+        <h3><strong>Skills</strong></h3>
+        <li *ngFor="let poke of pokemon.abilities">{{poke.ability.name}}</li>
+    </mat-card-content>
+    <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+        <button mat-button (click)="close()">CLOSE POPUP</button>
+    </mat-card-actions>
+</mat-card>
